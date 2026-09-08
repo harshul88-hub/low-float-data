@@ -15,6 +15,7 @@ jobs:
       - uses: actions/checkout@v4
       - name: Fetch the day
         run: |
+          mkdir -p data
           d=$(TZ=America/New_York date +%F)
           curl -fsSL https://ignitionalerts.com/assets/data/universe.csv -o "data/$d.csv"
           cp "data/$d.csv" data/latest.csv
