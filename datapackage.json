@@ -1,0 +1,20 @@
+{
+  "name": "low-float-universe",
+  "title": "Ignition Alerts low float universe",
+  "description": "Exchange listed US low float stocks with price, change on the day, volume, average volume, market cap and float. Refreshed every scan during market hours; one dated snapshot committed per market day.",
+  "homepage": "https://ignitionalerts.com/dataset/",
+  "licenses": [{"name": "CC-BY-4.0", "title": "Creative Commons Attribution 4.0", "path": "https://creativecommons.org/licenses/by/4.0/"}],
+  "sources": [{"title": "Ignition Alerts", "path": "https://ignitionalerts.com/"}],
+  "resources": [{
+    "name": "latest", "path": "data/latest.csv", "format": "csv", "mediatype": "text/csv", "encoding": "utf-8",
+    "schema": {"fields": [
+      {"name": "ticker", "type": "string", "description": "Exchange listed US symbol"},
+      {"name": "price", "type": "number", "description": "Last price in USD at the snapshot"},
+      {"name": "change_pct", "type": "number", "description": "Move on the day, percent; empty above 400 percent (unrestated reverse split)"},
+      {"name": "volume", "type": "number", "description": "Shares traded so far today"},
+      {"name": "avg_volume", "type": "number", "description": "Three month average daily volume"},
+      {"name": "market_cap", "type": "number", "description": "Market capitalisation in USD"},
+      {"name": "float", "type": "number", "description": "Shares available to trade; empty when the provider figure exceeds shares outstanding"}
+    ], "missingValues": [""]}
+  }]
+}
