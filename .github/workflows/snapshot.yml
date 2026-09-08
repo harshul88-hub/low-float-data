@@ -1,0 +1,28 @@
+# Every market day after the close, fetch the live CSV and commit it under its
+# date. The site only ever serves the current file; this repository becomes the
+# historical archive, which is the thing researchers actually want.
+name: Daily snapshot
+on:
+  schedule:
+    - cron: "40 21 * * 1-5"
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Fetch the day
+        run: |
+          d=$(TZ=America/New_York date +%F)
+          curl -fsSL https://ignitionalerts.com/assets/data/universe.csv -o "data/$d.csv"
+          cp "data/$d.csv" data/latest.csv
+          echo "rows: $(($(wc -l < data/latest.csv) - 1))"
+      - name: Commit
+        run: |
+          git config user.name "ignition-snapshot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data
+          git diff --cached --quiet || git commit -m "snapshot $(TZ=America/New_York date +%F)"
+          git push
