@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: If you use this dataset, please cite it and link to the dataset page.
+title: Ignition Alerts low float universe dataset
+type: dataset
+authors:
+  - name: Ignition Alerts
+    website: https://ignitionalerts.com
+url: https://ignitionalerts.com/dataset/
+repository-code: https://github.com/harshul88-hub/low-float-data
+license: CC-BY-4.0
+date-released: "2026-09-08"
+keywords:
+  - low float stocks
+  - small cap stocks
+  - market data
+  - stock screener
