@@ -75,3 +75,18 @@ accessed on the date you fetched it.
 
 This is price and volume data. It recommends nothing. Low float and micro cap stocks are
 among the most volatile securities in the market and total loss is possible.
+
+## Use it in Google Sheets, no code
+
+Put this in any cell and the sheet fills itself, refreshing roughly hourly:
+
+```
+=IMPORTDATA("https://ignitionalerts.com/assets/data/universe.csv")
+```
+
+Then sort and filter like any spreadsheet. If you share the sheet, the link travels with it.
+
+## Cite it
+
+Click **Cite this repository** in the sidebar, or use the CITATION.cff file. A `datapackage.json`
+is included so the data loads directly in Frictionless tools, pandas, R and most data catalogs.
