@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ignition Alerts is paused</title>
+<meta name="description" content="Ignition Alerts is paused. Alerts, the dashboards and the track record are offline for now.">
+<meta name="robots" content="noindex">
+<style>
+  :root {
+    --bg: #0b0b0d;
+    --surface: #131317;
+    --line: #26262c;
+    --text: #ece9e2;
+    --muted: #9a968d;
+    --gold: #e8a13c;
+    --fs-hero: clamp(2rem, 1.4rem + 3vw, 3.25rem);
+    --fs-body: clamp(1rem, 0.95rem + 0.2vw, 1.125rem);
+    --s-2: 8px; --s-4: 16px; --s-6: 24px; --s-10: 40px;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; height: 100%; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font: 400 var(--fs-body)/1.6 Inter, "Segoe UI", system-ui, -apple-system, sans-serif;
+    display: grid;
+    place-items: center;
+    padding: var(--s-4);
+  }
+  main {
+    width: 100%;
+    max-width: 34rem;
+    border: 1px solid var(--line);
+    background: var(--surface);
+    border-radius: 6px;
+    padding: var(--s-10) var(--s-6);
+  }
+  .mark {
+    font: 600 0.8rem/1 Archivo, Inter, system-ui, sans-serif;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin: 0 0 var(--s-6);
+  }
+  h1 {
+    font: 600 var(--fs-hero)/1.1 Archivo, Inter, system-ui, sans-serif;
+    margin: 0 0 var(--s-4);
+    letter-spacing: -0.01em;
+  }
+  p { margin: 0 0 var(--s-2); color: var(--muted); max-width: 60ch; }
+  .rule { height: 2px; width: 48px; background: var(--gold); margin: var(--s-6) 0; border: 0; }
+</style>
+</head>
+<body>
+<main>
+  <p class="mark">Ignition Alerts</p>
+  <h1>We're paused.</h1>
+  <hr class="rule">
+  <p>Alerts, the dashboards and the track record are offline for now.</p>
+  <p>Thank you for following along. We'll be back.</p>
+</main>
+</body>
+</html>
